@@ -42,8 +42,8 @@ class QuoteApp {
 
         const quoteWithSymbol = `<i class="fa fa-quote-left"></i> ${quote}`;
 
-        this.quoteForSharing = `
-        ${quote}
+        this.quoteForSharing = 
+        `${quote}
         - ${author}
         
         Source: ${source}
