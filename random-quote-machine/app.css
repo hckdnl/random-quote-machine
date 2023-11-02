@@ -1,35 +1,54 @@
 
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500');
+
 :root {
     --backgroundColor: #fff;
     --transitionSpeed: 1s;
 }
 
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    font-family: sans-serif;
     margin: 4rem;
     background-color: var(--backgroundColor);
     transition: background-color var(--transitionSpeed);
 }
 
-section#quoteDisplay {
+div#quote-box {
     background-color: whitesmoke;
+    border-radius: 10px;
     margin: 0 2rem;
     padding: 2rem;
     color: black;
     transition: color var(--transitionSpeed);
+
+    position: relative;
+    width: 500px;
+    font-size: 1.75em;
+    font-weight: 500;
+    font-family: sans-serif;
 }
 
-section#quoteDisplay.loading {
+div#quote-box.loading {
     color:whitesmoke;
 
 }
 
-section#quoteDisplay blockquote {
+section#quote-box blockquote {
     margin: 0;
 }
 
 section#quoteDisplay p.author {
     text-align: right;
+    font-size: 1rem;
 }
 
 section#quoteDisplay p.source {
@@ -55,14 +74,31 @@ section#buttons button {
     font-size: 1.25rem;
 }
 
-section#buttons button#getQuoteBtn {
+section#buttons button#new-quote {
     background-color: mediumseagreen;
 }
 
-section#buttons button#tweetQuoteBtn {
+section#buttons a#tweet-quote {
     background-color: deepskyblue;
+    padding: 1rem 2rem;
+    border: 0;
+    outline: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-weight: 900;
+    font-size: 1.25rem;
+
 }
 
-section#buttons button#getQuoteBtn:disabled {
+section#buttons button#gnew-quote:disabled {
     background-color: seagreen;
 }
+
+
+a#tweet-quote {
+    text-decoration: none; /* Entfernt die Unterstreichung */
+    color: #333; /* Ändert die Farbe des Links */
+}
+

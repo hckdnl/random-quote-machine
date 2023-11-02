@@ -1,6 +1,6 @@
 class QuoteApp {
     constructor() {
-        this.quoteBtn = document.getElementById('getQuoteBtn');
+        this.quoteBtn = document.getElementById('new-quote');
         this.quoteSection = document.querySelector('Section#quoteDisplay');
         this.quoteElements = {
             quote: this.quoteSection.querySelector('blockquote'),
@@ -14,10 +14,10 @@ class QuoteApp {
 
         this.dataSources = [typeFitDataSource, arrayDataSource];
 
-        this.tweetBtn = document.getElementById('tweetQuoteBtn')
+        this.tweetBtn = document.getElementById('tweet-quote')
         this.tweetBtn.addEventListener('click', this.tweetQuote.bind(this));
 
-        
+
     }
 
     getRandomDataSource() {
@@ -39,15 +39,18 @@ class QuoteApp {
 
         const randomQuoteResult = await this.getRandomQuote();
         const {quote, author = 'Unknown', source} = randomQuoteResult;
+
+        const quoteWithSymbol = `<i class="fa fa-quote-left"></i> ${quote}`;
+
         this.quoteForSharing = `
         ${quote}
-        // - ${author}
+        - ${author}
         
-        //Source: ${source}
-        //`;
+        Source: ${source}
+        `;
 
         setTimeout(()=> {
-            this.quoteElements.quote.textContent = quote;
+            this.quoteElements.quote.innerHTML = quoteWithSymbol;
             this.quoteElements.author.textContent = ` - ${author}`;
             this.quoteElements.source.textContent = `Source: ${source}`;
     
@@ -59,9 +62,8 @@ class QuoteApp {
 
     }
     tweetQuote() {
-        window.open(
-            `https://twitter.com/intent/tweet?text=${encodeURIComponent(this.quoteForSharing)}`
-        );
+        const tweetLink = `https://twitter.com/intent/tweet?text=${encodeURIComponent(this.quoteForSharing)}`;
+        window.open(tweetLink, '_blank');
     }
 
     generateRandomNumer(){

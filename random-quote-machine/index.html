@@ -16,23 +16,27 @@
     </head>
     <body>
         <main>
-            <section id="quoteDisplay" class="loading">
-                <blockquote>New Quote</blockquote>
-                <p class="author">- James</p>
-                <p class="source">Source: My App</p>
-            </section>
+            <div id="quote-box">
+                <section id="quoteDisplay" class="loading">
+                    <blockquote id="text">
+                        New Quote
+                    </blockquote>
+                    <p id="author" class="author">- James</p>
+                    <p class="source">Source: My App</p>
+                </section>
 
-            <section id="buttons">
-                <button id="getQuoteBtn">
-                    <i class="fa-regular fa-circle-right"></i>
-                    New Quote
-                </button>
+                <section id="buttons">
+                    <button id="new-quote">
+                        <i class="fa-regular fa-circle-right"></i>
+                        New Quote
+                    </button>
 
-                <button id="tweetQuoteBtn">
-                    <i class="fa-brands fa-square-x-twitter"></i>   
-                    Tweet
-                </button>
-            </section>
+                    <a id="tweet-quote" href="https://twitter.com/intent/tweet?text=${encodeURIComponent(this.quoteForSharing)}" target="_blank">
+                        <i class="fa-brands fa-square-x-twitter"></i>   
+                        Tweet
+                    </a>
+                </section>
+            </div>
         </main>
         <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
         <script src="./dataSources/typeFitDataSource.js"></script>
