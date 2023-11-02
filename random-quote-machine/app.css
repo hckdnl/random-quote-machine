@@ -1,0 +1,68 @@
+
+:root {
+    --backgroundColor: #fff;
+    --transitionSpeed: 1s;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 4rem;
+    background-color: var(--backgroundColor);
+    transition: background-color var(--transitionSpeed);
+}
+
+section#quoteDisplay {
+    background-color: whitesmoke;
+    margin: 0 2rem;
+    padding: 2rem;
+    color: black;
+    transition: color var(--transitionSpeed);
+}
+
+section#quoteDisplay.loading {
+    color:whitesmoke;
+
+}
+
+section#quoteDisplay blockquote {
+    margin: 0;
+}
+
+section#quoteDisplay p.author {
+    text-align: right;
+}
+
+section#quoteDisplay p.source {
+    font-size: 0.75rem;
+    font-style: italic;
+}
+
+section#buttons {
+    margin: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+section#buttons button {
+    padding: 1rem 2rem;
+    border: 0;
+    outline: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-weight: 900;
+    font-size: 1.25rem;
+}
+
+section#buttons button#getQuoteBtn {
+    background-color: mediumseagreen;
+}
+
+section#buttons button#tweetQuoteBtn {
+    background-color: deepskyblue;
+}
+
+section#buttons button#getQuoteBtn:disabled {
+    background-color: seagreen;
+}
